@@ -1,3 +1,4 @@
+<?php
 class SocketReader {
 	protected $socket;
 	protected $socklocation;
