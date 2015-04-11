@@ -6,7 +6,7 @@ require_once __DIR__ . '/../wikisets.php';
 $socket = new SocketMaster('/data/project/wmt/bots/tmp/sockets/server.sock');
 
 $dbsettings = parse_ini_file('/data/project/wmt/replica.my.cnf');
-$db = new mysqli('enwiki.labsdb', $dbsettings['user'], $dbsettings['password'], 'meta_p');
+$db = new mysqli('metawiki.labsdb', $dbsettings['user'], $dbsettings['password'], 'meta_p');
 
 $res = $mysql->query("SELECT `dbname`, `slice`, `url` FROM `wiki` WHERE `is_closed` = 0 ORDER BY `slice`");
 $res = array_diff($res, 'centralauth');
